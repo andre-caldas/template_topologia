@@ -1,0 +1,86 @@
+%
+% Orientações:
+%
+% - Neste template... tudo o que vocẽ não souber para que serve...
+%   pergunte!!! :-)
+%
+% - Utilize o "xelatex" e não o "pdflatex" para compilar.
+% - Utilize o programa "bibtex" para gerar a bibliografia.
+%   $ xelatex trabalho_final_de_topologia_geral
+%   $ bibtex trabalho_final_de_topologia_geral
+%   $ xelatex trabalho_final_de_topologia_geral
+%   $ xelatex trabalho_final_de_topologia_geral
+%
+% - Coloque os dados bibliográficos no arquivo
+%   trabalho_final_de_topologia_geral.bib
+%
+% - Não modifique os arquivos:
+%   1. trabalho_final_de_topologia_geral.tex
+%   2. definitions.tex
+%
+% - Crie macros! Coloque-as em:
+%   definitions_local.tex
+%
+% - Se quiser incluir algum pacote (\usepackage{}),
+%   faça-o no arquivo settings_local.tex
+%
+% - Divida o seu trabalho em "chapters", "sections" e "subsections".
+%
+% - Cada "chapter", "section" e "subsection" deve ficar em um arquivo separado.
+%   Modifique o arquivo body.tex para incluir seus arquivos.
+%
+% - NÃO chame os arquivos de "sec1.tex", "sec2.tex" ou coisa do tipo.
+%   Use um nome que indique seu conteúdo.
+%
+% - Você pode numerar os arquivos para que fiquem em ordem.
+%   Por exemplo, "01_introducao.tex", "02_resultados_preliminares.tex", etc...
+%
+%
+\documentclass[a4paper]{memoir}
+
+\sloppy
+
+\usepackage{fontspec}
+\usepackage{xltxtra}
+\usepackage{polyglossia}
+\setdefaultlanguage{brazil}
+
+\usepackage[none]{hyphenat}
+
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts, amssymb}
+
+\usepackage{graphicx}
+\usepackage[textsize=footnotesize]{todonotes}
+\usepackage[final]{hyperref}
+
+\input{settings_local}
+\input{definitions}
+\input{definitions_local}
+
+%
+% The headers will not be upper cased.
+%
+\nouppercaseheads
+
+
+\begin{document}
+  \frontmatter
+
+  \maketitle
+  \thispagestyle{empty}
+  \clearpage
+
+  \tableofcontents
+
+  %Memoir page style for mainmatter.
+  \pagestyle{ruled}
+  \mainmatter
+
+  {\input{body}}
+
+  \bibliographystyle{amsplain}
+  \bibliography{trabalho_final_de_topologia_geral}
+\end{document}

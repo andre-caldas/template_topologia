@@ -1,0 +1,74 @@
+\RequirePackage{mathrsfs} % Font \mathscr
+
+\theoremstyle{plain}
+
+\newtheorem{theorem}{Teorema}[section]
+
+\newtheorem{proposition}[theorem]{Proposição}
+\newtheorem{corollary}[theorem]{Corolário}
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem*{notation}{Notação}
+\newtheorem{definition}[theorem]{Definição}
+
+% Horrível: o estilo "definition" não é bom para definição e notação!
+% Horrível: estilo "remark" é ruim para observações e exemplos!!
+\theoremstyle{definition}
+\newtheorem{example}[theorem]{Exemplo}
+\newtheorem{obs}[theorem]{Observação}
+
+
+% Commonly used sets.
+\providecommand{\naturals}[0]{\mathbb{N}}
+\providecommand{\integers}[0]{\mathbb{Z}}
+\providecommand{\rationals}[0]{\mathbb{Q}}
+\providecommand{\reals}[0]{\mathbb{R}}
+\providecommand{\complexes}[0]{\mathbb{C}}
+
+\providecommand{\family}[1]{{\mathscr{#1}}}
+\providecommand{\parts}[1]{{\family{P}\left(#1\right)}}
+
+
+% Special symbols.
+\providecommand{\suchthat}[0]{{\thickspace | \thickspace}}
+\providecommand{\cardinality}[1]{{\# #1}}
+
+% Brackets.
+\newcommand{\threebracket}[5]{{\left #1 \vphantom{{#2}^N}\vphantom{{#4}^N}{#2} \, \right #3 \left. \vphantom{{#2}^N}\vphantom{{#4}^N}{#4} \right #5}}
+
+\providecommand{\setsuchthat}[2]{{\threebracket{\{}{#1}{|\:}{#2}{\}}}}
+\providecommand{\set}[1]{{\left \{ {#1} \right \}}}
+\providecommand{\abs}[1]{{\left\lvert#1\right\rvert}}
+\providecommand{\norm}[2][]{{\left\lVert{#2}\right\rVert_{#1}}}
+
+\newcommand{\integral}[3][]{{\int_{#1} {#2}\, \mathrm{d}{#3}}}
+
+% Operator names.
+\DeclareMathOperator{\identity}{id}
+\DeclareMathOperator{\interiorop}{int}
+\DeclareMathOperator{\closureop}{cl}
+\DeclareMathOperator{\supportop}{supp}
+\DeclareMathOperator{\qtpop}{qtp}
+
+\DeclareMathOperator{\eigenspace}{eig}
+\DeclareMathOperator{\expbase}{e}
+
+
+% Functions
+\newcommand{\function}[3]{{#1: #2 \to #3}}
+\newcommand{\functionmaps}[3]{{#1: #2 \mapsto #3}}
+\newcommand{\functionarray}[5]{{\begin{array}[t]{lrcl}
+                                  #1:& #2 &\to     &#3 \\
+                                     & #4 &\mapsto &#5
+                                \end{array}}}
+
+% Operations
+\newcommand{\closure}[1]{{\overline{#1}}}
+\newcommand{\interior}[1]{\interiorop \left({#1}\right)}
+\newcommand{\complementset}[1]{{#1}^{c}}
+\newcommand{\powerset}[1]{{\mathscr{P}({#1})}}
+\newcommand{\indicator}[1]{{I_{#1}}}
+\newcommand{\support}[1]{{\supportop \left( {#1} \right)}}
+
+
+\newcommand{\ball}[3][]{{B_{#1}\left({#3}; {#2}\right)}}
+\newcommand{\balls}[2]{{\family{B}_{#1}\left({#2}\right)}}
